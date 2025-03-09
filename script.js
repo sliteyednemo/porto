@@ -8,8 +8,7 @@ const commands = {
     help: "Perintah yang tersedia: <br> - <b>about</b>: Tentang saya <br> - <b>skills</b>: Keterampilan saya <br> - <b>contact</b>: Hubungi saya <br> - <b>clear</b>: Bersihkan layar",
     about: "Halo, saya Andre Geo! Seorang web developer yang menyukai Linux.",
     skills: "Saya menguasai: <br> - HTML, CSS, JavaScript <br> - PHP, Laravel <br> - Python, Flask <br> - Linux, Bash",
-    contact: "Email: andregeo@example.com <br>GitHub: github.com/andregeo",
-    clear: ""
+    contact: "Email: andregeo@example.com <br>GitHub: github.com/andregeo"
 };
 
 // Fungsi untuk efek mengetik
@@ -39,7 +38,9 @@ input.addEventListener("keydown", async function(event) {
 
         output.innerHTML += `<br><span class="prompt">➜ ~ </span>${command}<br>`;
 
-        if (command in commands) {
+        if (command === "clear") {
+            output.innerHTML = ""; // Bersihkan layar
+        } else if (command in commands) {
             await typeEffect(commands[command], 30);
         } else {
             await typeEffect("Perintah tidak ditemukan. Ketik <b>help</b> untuk daftar perintah.", 30);
