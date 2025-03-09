@@ -11,7 +11,7 @@ const commands = {
     contact: "Email: andregeo@example.com <br>GitHub: github.com/andregeo"
 };
 
-// Fungsi untuk efek mengetik
+// Fungsi efek mengetik
 async function typeEffect(text, speed = 30) {
     return new Promise(resolve => {
         let i = 0;
@@ -29,6 +29,12 @@ async function typeEffect(text, speed = 30) {
     });
 }
 
+// Fungsi untuk membersihkan terminal dan menampilkan prompt baru
+function clearTerminal() {
+    output.innerHTML = ""; // Menghapus seluruh isi terminal
+    output.innerHTML = '<span class="prompt">➜ ~ </span>'; // Menampilkan prompt baru
+}
+
 // Event listener untuk input
 input.addEventListener("keydown", async function(event) {
     if (event.key === "Enter") {
@@ -39,7 +45,7 @@ input.addEventListener("keydown", async function(event) {
         output.innerHTML += `<br><span class="prompt">➜ ~ </span>${command}<br>`;
 
         if (command === "clear") {
-            output.innerHTML = ""; // Bersihkan layar
+            clearTerminal(); // Panggil fungsi untuk membersihkan layar
         } else if (command in commands) {
             await typeEffect(commands[command], 30);
         } else {
