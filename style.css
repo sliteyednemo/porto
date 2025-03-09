@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+    color: #33ff33;
+    font-family: 'Fira Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.terminal {
+    width: 80%;
+    max-width: 800px;
+    background-color: #111;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    overflow: hidden;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.buttons span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-body {
+    padding: 15px;
+    font-size: 16px;
+    min-height: 300px;
+    overflow-y: auto;
+}
+
+#commandInput {
+    background: none;
+    border: none;
+    color: #33ff33;
+    font-family: 'Fira Mono', monospace;
+    font-size: 16px;
+    width: 80%;
+    outline: none;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+/* Efek Cursor Berkedip */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.prompt::after {
+    content: "_";
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
