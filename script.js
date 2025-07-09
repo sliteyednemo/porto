@@ -8,7 +8,7 @@ const commands = {
     help: "Perintah yang tersedia: about, badges, contact, help, clear",
     about: "Halo, saya Andre Geo! Seorang yang punya keingintahuan tinggi yang menyukai Linux, AI, Cybersecurity, dll.",
     badges: "Beberapa Badges kursus saya bisa diakses di credly.com/users/andrie-ahmad-geovani",
-    contact: "Email: andrieahmadgeovani@gmail.com <br>GitHub: github.com/andregeo"
+    contact: "Email: andrieahmadgeovani@gmail.com <br>GitHub: github.com/slideyednemo"
 };
 
 // Fungsi efek mengetik
